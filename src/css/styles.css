@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --main-color: #d3ad7f;
+  --black: #13131a;
+  --bg: #010103;
+  --border: .1rem solid rgba(255, 255, 255, .3);
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--bg);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  color: #ffffff;
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+.btn:hover {
+  letter-spacing: .2rem;
+}
+
+header {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header__container .logo img {
+  height: 6rem;
+}
+
+.header__container .navbar__container a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.header__container .navbar__container a:hover {
+  color: var(--main-color);
+  border-bottom: .1rem solid var(--main-color);
+  padding-bottom: .5rem;
+}
+
+.header__container .icons__container div {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.header__container .icons__container div:hover {
+  color: var(--main-color);
+}
+
+#menu-btn {
+  display: none;
+}
+
+.header__container .search__form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background: #ffffff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.header__container .search__form.active {
+  transform: scaleY(1);
+}
+
+.header__container .search__form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem;
+  text-transform: none;
+}
+
+.header__container .search__form label {
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: var(--black);
+}
+
+.header__container .search__form label:hover {
+  color: var(--main-color);
+}
+
+.header__container .cart__itens__container {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: #ffffff;
+  padding: 0 1.5rem;
+}
+
+.header__container .cart__itens__container.active {
+  right: 0;
+}
+
+.header__container .cart__itens__container .cart__item {
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__container .cart__itens__container .cart__item .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header__container .cart__itens__container .cart__item .fa-times:hover {
+  color: var(--main-color);
+}
+
+.header__container .cart__itens__container .cart__item img {
+  height: 7rem;
+}
+
+.header__container .cart__itens__container .cart__item .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding-bottom: .5rem;
+}
+
+.header__container .cart__itens__container .cart__item .content .price {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.header__container .cart__itens__container .btn {
+  width: 100%;
+  text-align: center;
+}
+
+@media(max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header__container {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media(max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .header__container .navbar__container {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+  }
+
+  .header__container .navbar__container.active {
+    right: 0;
+  }
+
+  .header__container .navbar__container a {
+    color: var(--black);
+    display: block;
+    margin: 1.5rem;
+    padding: .5rem;
+    font-size: 2rem;
+  }
+
+  .header__container .search__form {
+    width: 90%;
+    right: 2rem;
+  }
+}
+
+@media(max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

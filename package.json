@@ -1,11 +1,14 @@
 {
   "name": "coffe-shop-landing-page",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "packageManager": "yarn@3.1.1",
   "description": "",
   "version": "1.0.0",
-  "main": "index.js",
+  "source": "src/index.html",
+  "main": "src/js/script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
